@@ -334,7 +334,7 @@ const ModelDashboard = ({ Tab }: { Tab: React.ReactNode }) => {
               (modelPricing.outputPrice || 0) * (outputTokens / 1000)
             : ((modelPricing.charsPointsPrice || 0) * (inputTokens + outputTokens)) / 1000;
 
-          return acc + totalPoints;
+          return acc + Math.round(totalPoints);
         }
 
         return acc;

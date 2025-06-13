@@ -125,7 +125,7 @@ const DataTableComponent = ({
                 (modelPricing.outputPrice || 0) * (outputTokens / 1000)
               : ((modelPricing.charsPointsPrice || 0) * (inputTokens + outputTokens)) / 1000;
 
-            existing.totalCost += totalPoints;
+            existing.totalCost += Math.round(totalPoints);
           }
 
           channelMap.set(channelId, existing);
@@ -188,7 +188,7 @@ const DataTableComponent = ({
                 (modelPricing.outputPrice || 0) * (outputTokens / 1000)
               : ((modelPricing.charsPointsPrice || 0) * (inputTokens + outputTokens)) / 1000;
 
-            existing.totalCost += totalPoints;
+            existing.totalCost += Math.round(totalPoints);
           }
 
           modelMap.set(modelName, existing);
