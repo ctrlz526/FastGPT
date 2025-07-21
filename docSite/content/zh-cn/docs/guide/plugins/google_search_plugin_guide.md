@@ -4,7 +4,7 @@ description: "FastGPT Google 搜索插件配置指南"
 icon: "google_search"
 draft: false
 toc: true
-weight: 304
+weight: 305
 ---
 
 1. # 创建Google Custom Search Engine

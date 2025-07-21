@@ -4,7 +4,7 @@ description: "FastGPT SearXNG 搜索插件配置指南"
 icon: "search"
 draft: false
 toc: true
-weight: 303
+weight: 304
 ---
 
 [SearXNG](https://github.com/searxng/searxng)是一款免费的互联网元搜索引擎，它汇总了来自各种搜索服务和数据库的结果。它不会跟踪或分析用户。用户可以自行部署它进行使用。本文介绍 Searxng 的部署以及接入 FastGPT 插件。
