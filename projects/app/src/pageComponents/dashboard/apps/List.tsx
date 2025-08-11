@@ -38,12 +38,14 @@ import { type RequireOnlyOne } from '@fastgpt/global/common/type/utils';
 import UserBox from '@fastgpt/web/components/common/UserBox';
 import { type PermissionValueType } from '@fastgpt/global/support/permission/type';
 const HttpEditModal = dynamic(() => import('./HttpPluginEditModal'));
+import { useUserStore } from '@/web/support/user/useUserStore';
 
 const ListItem = () => {
   const { t } = useTranslation();
   const router = useRouter();
   const { parentId = null } = router.query;
   const { isPc } = useSystem();
+  const { userInfo } = useUserStore();
 
   const { openConfirm: openMoveConfirm, ConfirmModal: MoveConfirmModal } = useConfirm({
     type: 'common',
@@ -333,7 +335,8 @@ const ListItem = () => {
                                               onClick: () => setMoveAppId(app._id)
                                             }
                                           ]),
-                                      ...(app.permission.hasManagePer
+                                      ...(app.permission.hasManagePer &&
+                                      userInfo?.team.permission.hasManagePer
                                         ? [
                                             {
                                               icon: 'key',
